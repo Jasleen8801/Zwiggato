@@ -1,4 +1,4 @@
 nextcord==2.3.2
 selenium==4.6.0
-webdrivermanager==0.10.0
+webdriver-manager 3.8.5
 db-sqlite3==0.0.1
