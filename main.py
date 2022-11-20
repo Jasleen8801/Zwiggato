@@ -1,14 +1,14 @@
 import os, json, asyncio
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from nextcord.ext import commands
 from nextcord import Intents, Interaction, Embed, Activity, ActivityType
 from pathlib import Path
 
 helpGuide = json.load(open("help.json"))
 
-load_dotenv()
+# load_dotenv()
 
-DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
 
 intents = Intents.default()
 intents.message_content = True
