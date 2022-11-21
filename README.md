@@ -12,4 +12,5 @@ According to a news article, titled “The great Indian food delivery tussle” 
 This has led to the emergence of alternatives to mainstream food delivery websites (Swiggy and Zomato), like, Thrive, DotPe and Rezoy. With so many options to order a single item on the wide sea of internet, it’s often tiring for customers to make their choice. With this perspective, we decided to build our own Discord Bot, Zwiggato.
 
 ## Screenshots
+The following screenshot consists of the slash commands that are available in our Discord Bot.
 ![alt text](https://github.com/Jasleen8801/Zwiggato/blob/master/commands.jpg?raw=true)
