@@ -16,10 +16,10 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="/", intents=intents)
 bot.remove_command('help')
 
-@bot.slash_command(name="ping", description="Just a check command")
-async def ping(interaction: Interaction):
-    embed = Embed(title="Ping", description=f"The bot's ping is {round(bot.latency * 1000)}")
-    await interaction.send(embed=embed)
+# @bot.slash_command(name="ping", description="Just a check command")
+# async def ping(interaction: Interaction):
+#     embed = Embed(title="Ping", description=f"The bot's ping is {round(bot.latency * 1000)}")
+#     await interaction.send(embed=embed)
 
 def extensions():
     files = Path("cogs").rglob("*.py")
