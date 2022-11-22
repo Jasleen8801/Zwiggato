@@ -10,6 +10,6 @@
     },
     "Basic Commands": {
         "help": "Shows this command... DUH!!!!",
-        "chill": "Shows the information regarding other bots on our server..."
+        "test2": "Just a testing command"
     }
 }
