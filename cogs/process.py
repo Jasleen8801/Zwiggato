@@ -17,7 +17,7 @@ class ProcessCog(commands.Cog):
     def __init__(self, bot) -> None:
         self.bot = bot
 
-    @nextcord.slash_command(name="process", description="To process data from the food delivery website", guild_ids=[1028619109044326440])
+    @nextcord.slash_command(name="process", description="To process data from the food delivery website", guild_ids=[1040237301814546462])
     async def SetvalCity(self, interaction, website: str):
         if website.lower() == "zomato":
             await interaction.response.defer()
