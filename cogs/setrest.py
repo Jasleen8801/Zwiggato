@@ -7,7 +7,7 @@ class RestCog(commands.Cog):
     def __init__(self, bot) -> None:
         self.bot = bot
 
-    @nextcord.slash_command(name="setrest", description="To set the restaurant name", guild_ids=[1028619109044326440])
+    @nextcord.slash_command(name="setrest", description="To set the restaurant name", guild_ids=[1040237301814546462])
     async def SetvalCity(self, interaction, rest: str):
         db = sqlite3.connect('main.sqlite')
         cursor = db.cursor()
