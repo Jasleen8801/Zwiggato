@@ -9,7 +9,7 @@ class ResultCog(commands.Cog):
     def __init__(self, bot) -> None:
         self.bot = bot
 
-    @nextcord.slash_command(name="result", description="To view the result card from food delivery website", guild_ids=[1028619109044326440])
+    @nextcord.slash_command(name="result", description="To view the result card from food delivery website", guild_ids=[1040237301814546462])
     async def Result(self, interaction, website: str):
         if website.lower() == "zomato":
             fp = open('Zomato.json')
