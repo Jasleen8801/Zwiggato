@@ -15,6 +15,11 @@ This has led to the emergence of alternatives to mainstream food delivery websit
 The following screenshot consists of the slash commands that are available in our Discord Bot. <br/><br/>
 ![alt text](https://github.com/Jasleen8801/Zwiggato/blob/master/commands.jpg?raw=true)
 
+## Deployment
+We've deployed the final version of this bot on replit, and you can visit - https://replit.com/@JasleenKaur28/Food-ex?v=.<br/>
+Also to join our server, Foodie-fi, kindly join using the invite link - https://discord.gg/2t5THKP7 <br/><br/>
+Note - As we're currently lacking the costs, the version of Discord bot uploaded on Replit will deactivate after one hour of activity, kindly run the file before running to the server. We apologize for the inconvenience.
+
 ## Contribution
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update your local repository.
