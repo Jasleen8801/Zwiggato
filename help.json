@@ -9,7 +9,6 @@
         "result": "To show the required result from Food Delivery Website"
     },
     "Basic Commands": {
-        "help": "Shows this command... DUH!!!!",
-        "test2": "Just a testing command"
+        "help": "Shows this command... DUH!!!!"
     }
 }

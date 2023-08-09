@@ -3,13 +3,18 @@ from nextcord.ext import commands
 import json
 from nextcord import ButtonStyle
 from nextcord.ui import Button, View
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+GUILD_ID = os.getenv("GUILD_ID")
 
 
 class ResultCog(commands.Cog):
     def __init__(self, bot) -> None:
         self.bot = bot
 
-    @nextcord.slash_command(name="result", description="To view the result card from food delivery website", guild_ids=[1040237301814546462])
+    @nextcord.slash_command(name="result", description="To view the result card from food delivery website", guild_ids=[GUILD_ID])
     async def Result(self, interaction, website: str):
         if website.lower() == "zomato":
             fp = open('Zomato.json')

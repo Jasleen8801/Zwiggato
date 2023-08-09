@@ -1,14 +1,15 @@
 import os, json, asyncio
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 from nextcord.ext import commands
 from nextcord import Intents, Interaction, Embed, Activity, ActivityType
 from pathlib import Path
 
 helpGuide = json.load(open("help.json"))
 
-# load_dotenv()
+load_dotenv()
 
-DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
+# DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = Intents.default()
 intents.message_content = True
@@ -35,7 +36,7 @@ for ext_file in extensions():
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=Activity(name="Zwiggato Forever", type=ActivityType.playing))
+    await bot.change_presence(activity=Activity(name="Swiggy vs Zomato", type=ActivityType.competing))
 
 async def main():
     await bot.start(DISCORD_TOKEN)

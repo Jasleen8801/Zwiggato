@@ -11,17 +11,23 @@ import time
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import asyncio
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+GUILD_ID = os.getenv("GUILD_ID")
 
 
 class ProcessCog(commands.Cog):
     def __init__(self, bot) -> None:
         self.bot = bot
 
-    @nextcord.slash_command(name="process", description="To process data from the food delivery website", guild_ids=[1040237301814546462])
+    @nextcord.slash_command(name="process", description="To process data from the food delivery website", guild_ids=[GUILD_ID])
     async def SetvalCity(self, interaction, website: str):
         if website.lower() == "zomato":
             await interaction.response.defer()
             await asyncio.sleep(25)
+            print("Starting")
             db = sqlite3.connect('main.sqlite')
             cursor = db.cursor()
             cursor.execute(f"SELECT city, restaurant_name, food_item FROM main")
@@ -29,16 +35,17 @@ class ProcessCog(commands.Cog):
             CITY_NAME, RESTAURANT_NAME, FOOD_NAME = result[0], result[1], result[2]
             user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'
 
+            print(f"{CITY_NAME} {RESTAURANT_NAME} {FOOD_NAME}")
             options = Options()
             options.add_argument("--window-size=1920,1080")
             options.add_argument("--disable-extensions")
             options.add_argument("--proxy-server='direct://'")
             options.add_argument("--proxy-bypass-list=*")
             options.add_argument("--start-maximized")
-            options.add_argument('--headless')
-            options.add_argument('--disable-gpu')
-            options.add_argument('--disable-dev-shm-usage')
-            options.add_argument('--no-sandbox')
+            # options.add_argument('--headless')
+            # options.add_argument('--disable-gpu')
+            # options.add_argument('--disable-dev-shm-usage')
+            # options.add_argument('--no-sandbox')
             options.add_argument('--ignore-certificate-errors')
             options.add_argument(f'user-agent={user_agent}')
 
@@ -53,21 +60,22 @@ class ProcessCog(commands.Cog):
 
             # driver.get_screenshot_as_file("screenshot.png")
 
-            WebDriverWait(driver,timeout).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div[2]/header/nav/div/img')))
-            time.sleep(3)
+            # WebDriverWait(driver,timeout).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div[2]/header/nav/div/img')))
+            # time.sleep(3)
 
-            search_bar = driver.find_element(By.XPATH, '/html/body/div[1]/div/div[2]/header/nav/ul[2]/li[1]/div/div/div[3]/input')
+            search_bar = driver.find_element(By.XPATH, '/html/body/div[1]/div/div[2]/header/nav/ul[2]/li[1]/div/div/div[1]/input')
             search_bar.send_keys(RESTAURANT_NAME)
             search_bar.click()
 
-            WebDriverWait(driver,timeout).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div[2]/header/nav/ul[2]/li[1]/div/div/div[3]/div[2]/div[1]')))
+            WebDriverWait(driver,timeout).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/div[2]/header/nav/ul[2]/li[1]/div/div/div[3]/div[2]')))
             time.sleep(2)
 
-            first_option = driver.find_element(By.CLASS_NAME, 'sc-eNPDpu')
+            first_option = driver.find_element(By.XPATH, '/html/body/div[1]/div/div[2]/header/nav/ul[2]/li[1]/div/div/div[3]/div[2]/div[1]')
             first_option.click()
 
-            WebDriverWait(driver,timeout).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/main/div/article/div/section/section')))
+            WebDriverWait(driver,timeout).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div/main/div/section[3]/section')))
 
+            # to do from here
             order_online = driver.find_element(By.LINK_TEXT, 'Order Online')
             rest_link = order_online.get_attribute('href')
             dict['url'] = rest_link

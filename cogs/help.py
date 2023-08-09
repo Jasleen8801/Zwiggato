@@ -3,6 +3,11 @@ from nextcord.ext import commands
 from nextcord import ButtonStyle, Embed
 from nextcord.ui import Button, View
 import json
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+GUILD_ID = os.getenv("GUILD_ID")
 
 helpGuide = json.load(open("help.json"))
 
@@ -20,7 +25,7 @@ class HelpCog(commands.Cog):
             embed.set_footer(text=f"Page {pageNum+1} of {len(list(helpGuide))}")
         return embed
 
-    @nextcord.slash_command(name="help", guild_ids=[1040237301814546462])
+    @nextcord.slash_command(name="help", guild_ids=[GUILD_ID])
     async def Help(self, interaction):
         currentPage = 0
 

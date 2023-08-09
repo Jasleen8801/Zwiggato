@@ -1,13 +1,18 @@
 import nextcord
 from nextcord.ext import commands
 import sqlite3
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+GUILD_ID = os.getenv("GUILD_ID")
 
 
 class CityCog(commands.Cog):
     def __init__(self, bot) -> None:
         self.bot = bot
 
-    @nextcord.slash_command(name="setcity", description="To set the city name", guild_ids=[1040237301814546462])
+    @nextcord.slash_command(name="setcity", description="To set the city name", guild_ids=[GUILD_ID])
     async def SetvalCity(self, interaction, city: str):
         # await interaction.response.send_message(f"City set to {city}")
         db = sqlite3.connect('main.sqlite')
