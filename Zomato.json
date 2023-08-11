@@ -1,15 +1,19 @@
 {
-    "url": "https://www.zomato.com/patiala/burger-king-2-urban-estate/order",
-    "name": "Burger King",
-    "speciality": "Burger, Fast Food, Beverages",
-    "offers": ["No offers right now"],
+    "url": "https://www.zomato.com/ludhiana/kfc-ludhiana-junction/order",
+    "name": "KFC",
+    "speciality": "Burger, Fast Food, Biryani, Desserts, Beverages",
+    "offers": [],
     "Food-items": [
-        "Crispy Chicken Burger - \u20b990",
-        "2 Fiery Chicken Burger + 1 FREE Med Fries - \u20b9418",
-        "Crispy Chicken Burger + Med Fries + Med Pepsi + Chocolava cup - \u20b9309",
-        "Classic Chicken Burger + Med Fries + Med Pepsi + Chocolava cup - \u20b9338",
-        "Fiery Chicken Burger - \u20b9199",
-        "Fiery Chicken Burger Combo - \u20b9348",
-        "Crispy Chicken Burger - \u20b990"
+        "Zinger Pro Burger & Popcorn Meal - \u20b9459.05",
+        "Zinger Pro Burger - \u20b9239.05",
+        "Zinger Pro Burger & Chicken Meal - \u20b9399.05",
+        "Mixed Chicken Zinger Burger Doubles - \u20b9368.57",
+        "Chicken Zinger Burger - Classic with Cheese - \u20b9224.05",
+        "Chicken Zinger Burger - Tandoori with Cheese - \u20b9233.57",
+        "Veg Zinger Burger with Cheese - \u20b9213.57",
+        "Chicken Zinger Burger - Classic - \u20b9199.05",
+        "Veg Zinger Burger - \u20b9188.57",
+        "Chicken Zinger Burger - Tandoori - \u20b9208.57",
+        "Chicken Zinger Burger Meal - \u20b9354.29"
     ]
 }

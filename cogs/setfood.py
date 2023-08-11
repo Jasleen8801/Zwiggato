@@ -6,6 +6,7 @@ import os
 
 load_dotenv()
 GUILD_ID = os.getenv("GUILD_ID")
+GUILD_ID = int(GUILD_ID)
 
 
 class FoodCog(commands.Cog):

@@ -10,6 +10,7 @@ load_dotenv()
 
 # DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+GUILD_ID = os.getenv("GUILD_ID")
 
 intents = Intents.default()
 intents.message_content = True
