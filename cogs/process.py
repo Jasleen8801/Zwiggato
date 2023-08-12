@@ -104,62 +104,65 @@ class ProcessCog(commands.Cog):
         find_city_button = self.driver.find_element(By.CLASS_NAME, '_3lmRa')
         find_city_button.click()
 
-        WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.CLASS_NAME, '_10p2-')))
+        WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div[1]/header/div/div/ul/li[5]/div/a')))
 
-        # to do around here 
-        search_a_tag = self.driver.find_elements(By.CLASS_NAME, '_1T-E4')
-        search_a_tag[3].click()
+        search_a_tag = self.driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/header/div/div/ul/li[5]/div/a')
+        search_a_tag.click()
 
         WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(
-            (By.XPATH, '/html/body/div[1]/div[1]/div[1]/div[2]/div/div/div[3]/div[1]/div[2]/div')))
+            (By.XPATH, '/html/body/div[1]/div[1]/div/div[1]/div/form/div')))
 
-        input_rest = self.driver.find_element(By.CLASS_NAME, '_2FkHZ')
+        input_rest = self.driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div/div[1]/div/form/div/div[1]/input')
         input_rest.send_keys(rest_name)
 
-        WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.CLASS_NAME, '_1VxLu')))
+        WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div/button[1]')))
 
-        first_choice = self.driver.find_element(By.CLASS_NAME, '_37IIF')
+        first_choice = self.driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div/button[1]/div[2]/div[1]')
         first_choice.click()
 
         WebDriverWait(self.driver, timeout).until(
-            EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div[1]/div[1]/div[2]/div/div/div[3]/div[1]')))
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div/div[3]/div[1]/div/a/div[2]')))
 
         rest_link_item = self.driver.find_element(By.CLASS_NAME, 'styles_container__fLC0R')
-        link = rest_link_item.get_attribute('href')
+        link = rest_link_item.get_attribute('href') 
         dict['url'] = link
 
         item_block = self.driver.find_element(By.CLASS_NAME, 'styles_containerRestaurant__3vhx3')
         item_block.click()
 
         WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(
-            (By.XPATH, '/html/body/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div/div/div[2]/span[2]')))
+            (By.XPATH, '/html/body/div/div[1]/div/div/div/div[2]/div[5]/div[1]/div[1]/div/img')))
 
-        rest_name = self.driver.find_element(By.CLASS_NAME, '_3aqeL').text
+        rest_name = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div/div/div/div[2]/div[2]/div[1]/div/div[1]/p[1]').text
         dict['name'] = rest_name
 
-        rest_speciality = self.driver.find_element(By.CLASS_NAME, '_3Plw0').text
+        rest_speciality = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div/div/div/div[2]/div[2]/div[1]/div/div[1]/p[2]').text
         dict['speciality'] = rest_speciality
 
-        rest_offers = self.driver.find_elements(By.CLASS_NAME, '_3lvLZ')
+        rest_offers = self.driver.find_elements(By.XPATH, '/html/body/div/div[1]/div/div/div/div[2]/div[3]/div[2]/div/div/div[1]/button/div/div/div[1]/p')
         dict['offers'] = []
         for offer in rest_offers:
             dict['offers'].append(offer.text)
 
-        search_item = self.driver.find_element(By.CLASS_NAME, '_5mXmk')
-        search_item.send_keys(food_name)
+        search_item = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div/div/div/div[2]/div[1]/div[2]/button')
+        search_item.click()
 
         WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(
-            (By.XPATH, '/html/body/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[2]/div[1]/h2')))
+            (By.XPATH, '/html/body/div/div[1]/div/div/div/div[1]/div/div')))
         time.sleep(2)
 
-        parent = self.driver.find_element(By.ID, 'h-2061393516')
-        names = parent.find_elements(By.CLASS_NAME, 'styles_itemNameText__3ZmZZ')
-        prices = parent.find_elements(By.CLASS_NAME, 'rupee')
+        search_input = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div/div/div/div[1]/div/div/div[1]/label/input')
+        search_input.send_keys(food_name)
+
+        # parent = self.driver.find_element(By.ID, 'h-2061393516')
+        names = self.driver.find_elements(By.CLASS_NAME, 'styles_itemNameText__3ZmZZ')
+        print(names)
+        prices = self.driver.find_elements(By.CLASS_NAME, 'rupee')
 
         dict['Food-items'] = []
 
         for name, price in zip(names, prices):
-            dict['Food-items'].append(f"{name.text} - {price.text}")
+            dict['Food-items'].append(f"{name.text} - \u20b9{price.text}")
 
         # driver.quit()
 
@@ -171,7 +174,7 @@ class ProcessCog(commands.Cog):
     @nextcord.slash_command(name="process", description="To process data from the food delivery website", guild_ids=[GUILD_ID])
     async def SetvalCity(self, interaction, website: str):
         await interaction.response.defer()
-        await asyncio.sleep(25)
+        # await asyncio.sleep(25)
         db = sqlite3.connect('main.sqlite')
         cursor = db.cursor()
         cursor.execute(f"SELECT city, restaurant_name, food_item FROM main")

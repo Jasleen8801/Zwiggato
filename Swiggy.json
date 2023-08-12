@@ -1,27 +1,9 @@
 {
-    "url": "https://www.swiggy.com/restaurants/burger-king-opp-city-mall-friend-colony-patiala-112672",
-    "name": "Burger King",
-    "speciality": "Burgers, American",
+    "url": "https://www.swiggy.com/restaurants/kfc-gt-road-ludhiana-junction-ludhiana-87259",
+    "name": "KFC",
+    "speciality": "Burgers, Biryani",
     "offers": [
-        "50% off up to \u20b9100 | Use code WELCOME50",
-        "25% off up to \u20b9100 | Use AUDC100 Above \u20b9299"
+        "20% OFF UPTO \u20b950"
     ],
-    "Food-items": [
-        "2 Fiery Chicken Burger + 1 FREE Med Fries - 418",
-        "2 Chicken Tandoori Burger + 1 FREE Med Fries - 418",
-        "Crispy Chicken Burger + Med Fries + Med Pepsi + Chocolava cup - 309",
-        "Classic Chicken Burger + Med Fries + Med Pepsi + Chocolava cup - 338",
-        "Fiery Chicken Burger - 199",
-        "Chicken Tandoori Burger - 199",
-        "Fiery Chicken Burger Combo - 348",
-        "Chicken Tandoori Burger Combo - 348",
-        "Crispy Chicken Burger - 90",
-        "BK Classic Chicken Burger - 119",
-        "Crispy Chicken with Cheese Burger - 110",
-        "BK Classic Chicken with Cheese Burger - 139",
-        "Crispy Chicken Double Patty Burger - 129",
-        "Classic Chicken Double Patty Burger - 159",
-        "Chicken Makhani Burst Burger - 90",
-        "Chicken Makhani Burst Double Patty Burger - 130"
-    ]
+    "Food-items": []
 }
