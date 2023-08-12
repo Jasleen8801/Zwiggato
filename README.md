@@ -51,31 +51,31 @@ GUILD_ID=<YOUR_SERVER_ID>
 
 1. Create a New Application:
 
-- Visit the Discord Developer Portal.
-- Log in with your Discord account if you aren't already.
-- Click the "New Application" button.
+    - Visit the Discord Developer Portal.
+    - Log in with your Discord account if you aren't already.
+    - Click the "New Application" button.
 
 2. Set Application Name:
 
-- Provide a name for your application. This name will be visible to users, so choose a meaningful name for your bot.
+    - Provide a name for your application. This name will be visible to users, so choose a meaningful name for your bot.  
 
 3. Create a Bot:
 
-- In the left sidebar, click on the "Bot" tab.
-- Click the "Add Bot" button.
+    - In the left sidebar, click on the "Bot" tab.
+    - Click the "Add Bot" button.
 
 4. Get the Token:
 
-- Scroll down to the "TOKEN" section.
-- Click the "Copy" button to copy the token to your clipboard. Keep this token secure and do not share it publicly.
+    - Scroll down to the "TOKEN" section.
+    - Click the "Copy" button to copy the token to your clipboard. Keep this token secure and do not share it publicly.
 
 5. Add the Bot to Your Server:
 
-- In the left sidebar, go back to the "General Information" tab.
-- Copy the "Client ID" under the "APPLICATION ID" section.
-- Visit the following URL (replace YOUR_CLIENT_ID with your actual client ID):
-  `https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot&permissions=0`
-- Select the server where you want to add the bot and follow the prompts to authorize it.
+    - In the left sidebar, go back to the "General Information" tab.
+    - Copy the "Client ID" under the "APPLICATION ID" section.
+    - Visit the following URL (replace YOUR_CLIENT_ID with your actual client ID):
+      `https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot&permissions=0`
+    - Select the server where you want to add the bot and follow the prompts to authorize it.
 
 6. Add the token to the `.env` file and keep it safe.
 
@@ -83,12 +83,12 @@ GUILD_ID=<YOUR_SERVER_ID>
 
 1. Enable Developer Mode:
 
-- Open Discord and go to the settings.
-- Under "Advanced," enable "Developer Mode."
-- Copy the Guild ID:
+    - Open Discord and go to the settings.
+    - Under "Advanced," enable "Developer Mode."
+    - Copy the Guild ID:
 
 2. Right-click on the server name in your server list.
 
-- Click on "Copy ID" to copy the guild ID to your clipboard.
+    - Click on "Copy ID" to copy the guild ID to your clipboard.
 
 3. Add the GUILD ID to the `.env` file and keep it safe
