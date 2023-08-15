@@ -59,10 +59,10 @@ class ProcessCog(commands.Cog):
         rest_speciality = self.driver.find_element(By.XPATH, '/html/body/div[1]/div/main/div/section[3]/section/section/div/div/section[1]/div')
         dict_data['speciality'] = rest_speciality.text
 
-        offers = self.driver.find_elements(By.CLASS_NAME, 'sc-1a03l6b-3')
-        dict_data['offers'] = []
-        for offer in offers:
-            dict_data['offers'].append(offer.text)
+        # offers = self.driver.find_elements(By.CLASS_NAME, 'sc-1a03l6b-3')
+        # dict_data['offers'] = []
+        # for offer in offers:
+        #     dict_data['offers'].append(offer.text)
 
         search_menu = self.driver.find_element(By.XPATH, '/html/body/div[1]/div/main/div/section[4]/section/section[2]/div[2]/section/section/input')
         search_menu.send_keys(food_name)
@@ -72,12 +72,15 @@ class ProcessCog(commands.Cog):
 
         names = self.driver.find_elements(By.CLASS_NAME, 'sc-1s0saks-15')
         prices = self.driver.find_elements(By.CLASS_NAME, 'sc-17hyc2s-1')
+        offers = self.driver.find_elements(By.CLASS_NAME, 'sc-1s0saks-12')
+        # print(offers)
 
         # self.driver.quit()
 
         dict_data["Food-items"] = []
-        for name, price in zip(names, prices):
-            dict_data['Food-items'].append(f"{name.text} - {price.text}")
+        for name, price, offer in zip(names, prices, offers):
+            dict_data['Food-items'].append(f'{name.text} - {price.text}')
+            dict_data['offers'].append(offer.text)
 
         time.sleep(3)
         with open("Zomato.json", "w", encoding='utf-8') as fp:
@@ -154,10 +157,10 @@ class ProcessCog(commands.Cog):
         search_input = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div/div/div/div[1]/div/div/div[1]/label/input')
         search_input.send_keys(food_name)
 
-        # parent = self.driver.find_element(By.ID, 'h-2061393516')
-        names = self.driver.find_elements(By.CLASS_NAME, 'styles_itemNameText__3ZmZZ')
-        print(names)
-        prices = self.driver.find_elements(By.CLASS_NAME, 'rupee')
+        # parent = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div/div/div/div[2]')
+        names = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div/div/div/div[2]/div[1]/div/div[1]/div[2]/h3')
+        # print(names)
+        prices = parent.find_elements(By.CLASS_NAME, 'rupee')
 
         dict['Food-items'] = []
 
@@ -183,7 +186,7 @@ class ProcessCog(commands.Cog):
         if(len(all_records) >= 2):
             second_record = all_records[1]
             CITY_NAME, RESTAURANT_NAME, FOOD_NAME = second_record[0], second_record[1], second_record[2]
-            print(f"{CITY_NAME} {RESTAURANT_NAME} {FOOD_NAME}")
+            # print(f"{CITY_NAME} {RESTAURANT_NAME} {FOOD_NAME}")
         else: 
             print("Some issue")
 

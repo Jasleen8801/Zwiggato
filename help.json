@@ -1,14 +1,16 @@
 {
-    "Set Value Commands": {
-        "setcity": "To set the city name",
-        "setrest": "To set the restaurant name",
-        "setfood": "To set the food item you want to order"
-    },
-    "Web Commands": {
-        "process": "To load the required data from food delivery website",
-        "result": "To show the required result from Food Delivery Website"
-    },
-    "Basic Commands": {
-        "help": "Shows this command... DUH!!!!"
-    }
+  "Set Value Commands": {
+    "setcity": "To set the city name",
+    "setrest": "To set the restaurant name",
+    "setfood": "To set the food item you want to order"
+  },
+  "Web Commands": {
+    "process": "To load the required data from food delivery website",
+    "result": "To show the required result from Food Delivery Website"
+  },
+  "Basic Commands": {
+    "help": "Shows this command... DUH!!!!",
+    "clear": "To clear the values set in database",
+    "list": "To show the currently set values in database"
+  }
 }
