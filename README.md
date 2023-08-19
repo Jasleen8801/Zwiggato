@@ -109,4 +109,11 @@ GUILD_ID=<YOUR_SERVER_ID>
 - `clear`: Clear values stored in the database.
 - `list`: Show currently set values in the database.
 
+### Miscellaneous Commands
+- `suggest`: To suggest a food item
+- `trending`: To get the trending food items
+- `blogs`: To get the latest food blogs
+- `report`: To report a bug or issue
+- `about`: To know more about the bot
+
 These features enable users to streamline the process of comparing food prices and making informed choices when ordering from different platforms.
