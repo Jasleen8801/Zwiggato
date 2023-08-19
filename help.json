@@ -12,5 +12,10 @@
     "help": "Shows this command... DUH!!!!",
     "clear": "To clear the values set in database",
     "list": "To show the currently set values in database"
+  },
+  "Miscellaneous Commands": {
+    "suggest": "To suggest a food item",
+    "trending": "To show the trending food items in your city",
+    "blogs": "To show the blogs related to food"
   }
 }

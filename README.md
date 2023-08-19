@@ -92,3 +92,21 @@ GUILD_ID=<YOUR_SERVER_ID>
     - Click on "Copy ID" to copy the guild ID to your clipboard.
 
 3. Add the GUILD ID to the `.env` file and keep it safe
+
+## Features and Endpoints
+
+### Set Value Commands
+- `setcity`: Set the city name.
+- `setrest`: Set the restaurant name.
+- `setfood`: Set the desired food item.
+
+### Web Commands
+- `process`: Load required data from food delivery websites.
+- `result`: Show results from food delivery websites.
+
+### Basic Commands
+- `help`: Display available commands.
+- `clear`: Clear values stored in the database.
+- `list`: Show currently set values in the database.
+
+These features enable users to streamline the process of comparing food prices and making informed choices when ordering from different platforms.

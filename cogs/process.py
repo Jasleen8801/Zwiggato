@@ -73,14 +73,17 @@ class ProcessCog(commands.Cog):
         names = self.driver.find_elements(By.CLASS_NAME, 'sc-1s0saks-15')
         prices = self.driver.find_elements(By.CLASS_NAME, 'sc-17hyc2s-1')
         offers = self.driver.find_elements(By.CLASS_NAME, 'sc-1s0saks-12')
-        # print(offers)
+        dict_data['offers'] = []
+        for offer in offers:
+            dict_data['offers'].append(f'{offer.text}')
+            print(offer.text)
 
         # self.driver.quit()
 
         dict_data["Food-items"] = []
-        for name, price, offer in zip(names, prices, offers):
+        for name, price in zip(names, prices):
             dict_data['Food-items'].append(f'{name.text} - {price.text}')
-            dict_data['offers'].append(offer.text)
+            # dict_data['offers'].append(f'{offer.text}')
 
         time.sleep(3)
         with open("Zomato.json", "w", encoding='utf-8') as fp:
@@ -213,10 +216,10 @@ def setup(bot):
     options.add_argument("--proxy-server='direct://'")
     options.add_argument("--proxy-bypass-list=*")
     options.add_argument("--start-maximized")
-    # options.add_argument('--headless')
-    # options.add_argument('--disable-gpu')
-    # options.add_argument('--disable-dev-shm-usage')
-    # options.add_argument('--no-sandbox')
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--no-sandbox')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument(f'user-agent={user_agent}')
 
