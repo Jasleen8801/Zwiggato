@@ -11,11 +11,13 @@
   "Basic Commands": {
     "help": "Shows this command... DUH!!!!",
     "clear": "To clear the values set in database",
-    "list": "To show the currently set values in database"
+    "list": "To show the currently set values in database",
+    "suggest": "Shows some food item you can order"
   },
   "Miscellaneous Commands": {
-    "suggest": "To suggest a food item",
-    "trending": "To show the trending food items in your city",
-    "blogs": "To show the blogs related to food"
+    "feature": "To request a feature",
+    "report": "To report a bug",
+    "about": "To know about the bot",
+    "developer": "To know about the developer of this project"
   }
 }

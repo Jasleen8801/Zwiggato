@@ -45,6 +45,7 @@ pip install -r requirements.txt
 ```bash
 DISCORD_TOKEN=<YOUR_DISCORD_TOKEN>
 GUILD_ID=<YOUR_SERVER_ID>
+ADMIN_USER_ID=<YOUR_USER_ID>
 ```
 
 ## Accessing Discord Token
@@ -92,6 +93,40 @@ GUILD_ID=<YOUR_SERVER_ID>
     - Click on "Copy ID" to copy the guild ID to your clipboard.
 
 3. Add the GUILD ID to the `.env` file and keep it safe
+
+## Obtaining the Admin ID
+
+1. Enable Developer Mode:
+
+    - Open Discord and go to the settings.
+    - Under "Advanced," enable "Developer Mode."
+    - Copy the User ID:
+
+2. Right-click on your username in the user list.
+
+    - Click on "Copy ID" to copy the user ID to your clipboard.
+
+3. Add the ADMIN ID to the `.env` file and keep it safe
+
+## Running the Bot
+
+1. Activate the virtual environment on Linux/MacOS:
+
+```bash
+source venv/bin/activate
+```
+
+Activate the virtual environment on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+2. Run the bot:
+
+```bash
+python3 main.py
+```
 
 ## Features and Endpoints
 
